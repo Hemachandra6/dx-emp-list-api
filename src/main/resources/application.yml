@@ -1,17 +1,24 @@
 spring:
+  #  sql:
+  #    init:
+  #      mode: always
   application:
     name: dx-emp-list-api
   datasource:
-    url: jdbc:mysql://localhost:3306/dev-dx-emp-list
+    url: jdbc:postgresql://localhost/dev-dx-emp-list
     username: root
     password: 1234
+    initialization-mode: always
+    #    url: jdbc:mysql://localhost:3306/dev-dx-emp-list
+    #    username: root
+    #    password: 1234
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         default_schema: public
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
 server:
   servlet:
